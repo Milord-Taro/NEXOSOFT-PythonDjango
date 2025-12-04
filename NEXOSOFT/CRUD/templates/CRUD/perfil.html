@@ -1,0 +1,21 @@
+{% extends "CRUD/base_dashboard.html" %}
+
+{% block title %}Mi perfil{% endblock %}
+
+{% block content %}
+<h2>Mi perfil</h2>
+
+<p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+<p><strong>Correo:</strong> {{ usuario.correo }}</p>
+<p><strong>Rol:</strong> {{ usuario.rol }}</p>
+<p><strong>Estado de cuenta:</strong> {{ usuario.estado_cuenta }}</p>
+<p><strong>Estado vendedor:</strong> {{ usuario.estado_vendedor }}</p>
+
+{% if usuario.estado_vendedor == "ninguno" %}
+    <a href="{% url 'solicitar_vendedor' %}">Solicitar ser vendedor</a>
+{% endif %}
+
+
+<a href="{% url 'editar_perfil' %}">Editar perfil</a> |
+<a href="{% url 'eliminar_cuenta' %}">Eliminar mi cuenta</a>
+{% endblock %}

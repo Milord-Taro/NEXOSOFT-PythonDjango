@@ -1,0 +1,19 @@
+{% extends "CRUD/base.html" %}
+
+{% block title %}Eliminar cuenta{% endblock %}
+
+{% block content %}
+<h2>Eliminar cuenta</h2>
+
+<p>¿Seguro que deseas eliminar tu cuenta, {{ usuario.nombre }}?</p>
+<p>Tu solicitud será enviada al administrador para revisión.</p>
+
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Sí, eliminar mi cuenta</button>
+</form>
+
+<br>
+<a href="{% url 'perfil' %}">Cancelar</a>
+{% endblock %}

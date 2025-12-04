@@ -1,0 +1,47 @@
+{% extends "CRUD/base_login.html" %}
+
+{% block title %}Registro - NEXOSOFT{% endblock %}
+
+{% block content %}
+<div class="auth-card">
+  <h4 class="mb-3">Registro de usuario</h4>
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+
+    <div class="mb-3">
+      <label class="form-label">Nombre completo</label>
+      <input type="text" name="nombre" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Correo electrónico</label>
+      <input type="email" name="correo" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Contraseña</label>
+      <input type="password" name="password1" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Repetir contraseña</label>
+      <input type="password" name="password2" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Rol</label>
+      <select name="rol" class="form-select" required>
+        <option value="cliente">Cliente</option>
+        <option value="vendedor">Vendedor</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-primary-nx w-100">Registrarme</button>
+  </form>
+
+  <div class="mt-3 small-muted text-center">
+    ¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+/* Hero */
+.hero-section {
+    background: linear-gradient(135deg, #37474F, #D32F2F);
+    padding: 120px 0;
+}
+
+/* Benefits cards */
+.feature-card {
+    border-left: 5px solid #D32F2F;
+}
+
+/* CTA section */
+.cta-section {
+    background: #37474F;
+}

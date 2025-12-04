@@ -1,0 +1,33 @@
+{% extends "CRUD/base_dashboard.html" %}
+
+{% block title %}Solicitudes de vendedores{% endblock %}
+
+{% block content %}
+<h2>Solicitudes de vendedores</h2>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Nombre de tienda</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+    </tr>
+
+    {% for s in solicitudes %}
+    <tr>
+        <td>{{ s.nombre }}</td>
+        <td>{{ s.correo }}</td>
+        <td>{{ s.tienda.nombre }}</td>
+        <td>{{ s.tienda.descripcion }}</td>
+        <td>
+            <a href="{% url 'aprobar_solicitud' s.id %}">Aprobar</a>
+            <a href="{% url 'rechazar_solicitud' s.id %}">Rechazar</a>
+        </td>
+    </tr>
+    {% empty %}
+        <tr><td colspan="5">No hay solicitudes pendientes.</td></tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "CRUD/base_landing.html" %}
+
+{% block title %}NEXOSOFT - Innovación que conecta{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="hero-section text-white d-flex align-items-center">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold">Soluciones Tecnológicas que Impulsan tu Negocio</h1>
+    <p class="lead mt-3">Plataforma segura, escalable y diseñada para crecer contigo.</p>
+    <a href="{% url 'registro' %}" class="btn btn-primary btn-lg mt-4">Comienza ahora</a>
+  </div>
+</section>
+
+<!-- Sección de beneficios -->
+<section class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">¿Por qué elegir NEXOSOFT?</h2>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card p-4 rounded shadow-sm">
+          <h4 class="fw-bold">Tecnología moderna</h4>
+          <p>Infraestructura robusta basada en estándares de la industria.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-card p-4 rounded shadow-sm">
+          <h4 class="fw-bold">Plataforma segura</h4>
+          <p>Protección avanzada con autenticación y cifrado de datos.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-card p-4 rounded shadow-sm">
+          <h4 class="fw-bold">Escalable</h4>
+          <p>Crece sin límites con arquitectura flexible y modular.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section text-white py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold">¿Listo para llevar tu negocio al siguiente nivel?</h2>
+    <p class="mt-3">Únete hoy a nuestra plataforma.</p>
+    <a href="{% url 'registro' %}" class="btn btn-light btn-lg mt-3">Crear cuenta</a>
+  </div>
+</section>
+
+<form method="POST" action="{% url 'registro' %}" class="p-4 bg-white shadow-sm rounded">
+  {% csrf_token %}
+
+  <div class="mb-3">
+    <label class="form-label">Nombre completo</label>
+    <input type="text" name="nombre" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Correo electrónico</label>
+    <input type="email" name="correo" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Contraseña</label>
+    <input type="password" name="password1" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Repite la contraseña</label>
+    <input type="password" name="password2" class="form-control" required>
+  </div>
+
+  <input type="hidden" name="rol" value="cliente">
+
+  <button type="submit" class="btn btn-primary w-100">Crear cuenta</button>
+</form>
+
+
+
+{% endblock %}

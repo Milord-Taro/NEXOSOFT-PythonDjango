@@ -1,0 +1,89 @@
+/* ==============================
+      VARIABLES GLOBALES
+============================== */
+
+:root {
+    --nx-red: #D32F2F;
+    --nx-red-dark: #b02727;
+    --nx-gray: #37474F;
+    --nx-light: #f5f5f5;
+    --nx-radius: 10px;
+}
+
+/* ==============================
+      NAVBAR
+============================== */
+.navbar-nx {
+    background-color: var(--nx-gray);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.nav-link {
+    color: #fff !important;
+    margin-right: 15px;
+}
+
+.nav-link:hover {
+    color: var(--nx-red) !important;
+}
+
+/* ==============================
+      AUTH CARD (login/registro)
+============================== */
+.auth-card {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 25px;
+    background: white;
+    border-radius: var(--nx-radius);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* ==============================
+      BOTÓN PRINCIPAL NEXOSOFT
+============================== */
+.btn-primary-nx {
+    background-color: var(--nx-red) !important;
+    border-color: var(--nx-red) !important;
+}
+
+.btn-primary-nx:hover {
+    background-color: var(--nx-red-dark) !important;
+}
+
+/* ==============================
+      TABLAS, DASHBOARD
+============================== */
+.table-nx thead {
+    background-color: var(--nx-gray);
+    color: white;
+}
+
+.table-nx tbody tr:hover {
+    background-color: #eeeeee;
+}
+
+/* ==============================
+      GENERAL UI
+============================== */
+body {
+    background-color: var(--nx-light);
+    font-family: "Montserrat", sans-serif;
+}
+
+.small-muted {
+    color: #777;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--nx-gray);
+    margin-bottom: 20px;
+}

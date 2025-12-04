@@ -1,0 +1,29 @@
+{% extends "CRUD/base.html" %}
+
+{% block title %}Editar perfil{% endblock %}
+
+{% block content %}
+<h2>Editar perfil</h2>
+
+<form method="post">
+  {% csrf_token %}
+
+  <label>Nombre completo:</label><br>
+  <input type="text" name="nombre" value="{{ usuario.nombre }}" required><br><br>
+
+  {% if request.session.usuario_rol == "admin" %}
+    <label>Rol:</label><br>
+    <select name="rol">
+      {% for r in roles %}
+        <option value="{{ r }}" {% if r == usuario.rol %}selected{% endif %}>{{ r }}</option>
+      {% endfor %}
+    </select><br><br>
+  {% else %}
+    <p><strong>Rol:</strong> {{ usuario.rol }} (no modificable)</p>
+  {% endif %}
+
+  <button type="submit">Guardar cambios</button>
+</form>
+
+<a href="{% url 'perfil' %}">Volver al perfil</a>
+{% endblock %}
